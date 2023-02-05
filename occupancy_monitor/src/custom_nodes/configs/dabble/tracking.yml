@@ -1,0 +1,9 @@
+# Mandatory configs
+input: ["img", "bboxes"]
+output: ["obj_attrs"]
+
+# Optional configs depending on node
+tracking_type: "iou"
+iou_threshold: 0.1
+max_lost: 10
+

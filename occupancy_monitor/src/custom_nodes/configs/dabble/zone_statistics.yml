@@ -1,0 +1,12 @@
+# Mandatory configs
+input: ["btm_midpoint", "obj_attrs"]
+output: ["zones", "entered", "exited", "occupancy", "status"]
+
+# Optional configs depending on node
+capacity: 5
+buffer: 2
+resolution: [1280, 720] # or [720, 480]
+zones: [
+   [[0,0], [1,0], [1,0.5], [0,0.5]],
+   [[0,0.5], [1,0.5], [1,1], [0,1]]
+]

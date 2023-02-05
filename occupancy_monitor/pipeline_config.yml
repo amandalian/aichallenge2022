@@ -1,0 +1,27 @@
+nodes:
+- input.visual:
+    source: people_corridor.avi
+    # see below for options
+- model.yolo:
+    detect: ["person"]
+- dabble.bbox_to_btm_midpoint
+- custom_nodes.dabble.tracking
+- custom_nodes.dabble.zone_statistics:
+    capacity: 2
+    buffer: 1
+    resolution: [640, 480]
+    # people_pavement.avi : [640, 480]
+    # people_stairs.mov : [4096, 2160]
+    # people_walking.mp4 : [805, 480]
+    zones: [
+        [[0,0], [1,0], [1,0.4], [0,0.4]],
+        [[0,0.6], [1,0.6], [1,1], [0,1]]
+    ]
+# - dabble.fps
+- draw.bbox
+- draw.zones
+- draw.tag:
+    show: ["ids"]
+- draw.legend:
+    show: ["status", "occupancy", "entered", "exited"]
+- output.screen
