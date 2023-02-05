@@ -1,6 +1,6 @@
 nodes:
 - input.visual:
-    source: people_corridor.avi
+    source: people_pavement.avi
     # see below for options
 - model.yolo:
     detect: ["person"]
